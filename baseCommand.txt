@@ -1,0 +1,5 @@
+python -m http.server --bind 0.0.0.0
+
+git add .
+git commit -m "message commit"
+git push origin main --force

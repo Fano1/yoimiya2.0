@@ -52,7 +52,7 @@ def check_auth():
         print(f"[ERROR] {e}")
 
 
-# 👉 Run this
+#  Run this
 if __name__ == "__main__":
     check_auth()
     

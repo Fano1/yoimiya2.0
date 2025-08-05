@@ -1,11 +1,7 @@
 from langchain_google_genai import ChatGoogleGenerativeAI
+from dotenv import load_dotenv
 
-
-import getpass
-import os
-
-if "GOOGLE_API_KEY" not in os.environ:
-    os.environ["GOOGLE_API_KEY"] = "AIzaSyA74_pOK5owX89EDNOyQqygRJAggF0UuZc"
+load_dotenv()
 
 llm = ChatGoogleGenerativeAI(
     model="gemini-2.5-flash",
@@ -13,15 +9,22 @@ llm = ChatGoogleGenerativeAI(
     max_tokens=None,
     timeout=None,
     max_retries=2,
-    # other params...
-)
-
+    # oth
+    )
 messages = [
     (
         "system",
-        "You are a helpful assistant that translates English to French. Translate the user sentence.",
+        "You are a helpful assistant that does some spicy story telling",
     ),
-    ("human", "I love programming."),
+    ("human", "tell me a story."),
 ]
-ai_msg = llm.invoke(messages)
-print(ai_msg.content)
+
+def save(bruh):
+    pass 
+
+def defaultMessage(message):
+    print(llm.invoke(message).content)
+
+def streamMessage(message):
+    for chunk in llm.stream(message.content):
+        print(chunk.content)

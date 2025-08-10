@@ -1,8 +1,8 @@
-from protocol.models.geminiOllama import execute 
+from app import runAdminPanel
 
 
 def main():
-    execute()
+    runAdminPanel()
     
-if __name__ == "___main__":
+if __name__ == "__main__":
     main()

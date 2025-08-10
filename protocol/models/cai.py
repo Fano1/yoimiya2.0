@@ -20,7 +20,7 @@ async def init_client():
         print(f"Authenticated as @{me.username}")
     return client
 
-async def run_command_async(message: str) -> str:
+async def run_cai_async(message: str) -> str:
     try:
         cli = await init_client()
         # chat, greeting_message = await client.chat.create_chat(character_id)
